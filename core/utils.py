@@ -16,7 +16,7 @@ def cambio_moneda(codigo):
         print("💚 ", valor)
         return valor
     else:
-        print('Error al consultar la API del Banco Central de Chile')
+        print("")
 
 
 def agregar(request, id_producto):

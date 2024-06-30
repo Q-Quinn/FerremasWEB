@@ -57,13 +57,13 @@ class CambioMonedaTests(TestCase):
         self.assertEqual(response.status_code, 200)
 
         data = response.json()
-        print("DATA QUE LLEGA ", data)
+       
         valor = data['Series']['Obs'][0]['value']
-        print("VALOR QUE SE RECUPERA ", valor)
+      
 
         valor = int(valor)
 
-        print("VALOR DOLAR QUE LE PASO ",dolar)
+       
 
         self.assertEqual(valor, dolar)
 
