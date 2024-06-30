@@ -1,0 +1,47 @@
+
+    <div class="alert alert-dark" role="alert">
+        <table class="table table-striped">
+            <thead>
+                <tr> 
+                    <th scope="row" colspan="3" class="text-center">Compra</th>
+                </tr>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Unidades</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if request.session.compra.items %}
+                {% for key, value in request.session.compra.items %}
+                <tr>
+                    <td>{{value.nombre}}</td>
+                    <td>{{value.precio}}</td>
+                    <td>{{value.Unidades}}</td>
+                    <td>
+                        <a href="{% url 'agregar_producto' value.id_producto %}" class="badge btn btn-dark badge-dark">+</a>
+                        <a href="{% url 'restar' value.id_producto %}" class="badge btn btn-dark badge-dark">-</a>
+                    </td>
+                </tr>
+                
+                {% endfor %}
+                {% else %}
+                <tr> 
+                    <th scope="row" colspan="3">
+                        <div class="alert alert-warning text-center">Sin Productos Seleccionados</div>
+                    </th>
+                </tr>
+                {% endif%}
+                <tr>
+                    <th scope="row">Total:</th>
+                    <td colspan="2">$ {{total_compra}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        
+    </div>
+    <div class="row text-center" style="margin-bottom: 15px;">
+        <div ><a class="btn btn-outline-success" href="{% url 'initiate_payment' %}">Pagar</a></div>
+        <div ><a href="{% url 'limpiar' %}" class="btn btn-outline-danger">Limpiar</a></div>
+    </div>
