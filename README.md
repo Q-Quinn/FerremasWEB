@@ -1,6 +1,6 @@
 # FerremasWEB
 ## Lenguajes
-- Python
+- Python, html, javascript
 ## Tecnología
 - API propia: [Documentación de la API](https://github.com/Q-Quinn/FerremasAPI)
 - Transbank SDK
@@ -16,6 +16,6 @@
    python manage.py runserver 8001
 ### Sugerencias Adicionales:
 instalar las dependencias de pip, python, django, djangorestframework y el paquete de sdk de transbank.
-2. Ejecuta el proyecto con el siguiente comando:
+- 2. Ejecuta el proyecto con el siguiente comando:
    ```bash
    python manage.py runserver
